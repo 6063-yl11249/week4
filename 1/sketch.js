@@ -1,11 +1,23 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  background("pink");
+  fill('gold');
 }
 
+let xPos= 0;
+let xVelocity = 5;
+
 function draw() {
-  background(255);
-  fill(0);
-  rect(width / 2 - width / 40, height / 4 - width / 20, width / 20, height / 2 + width / 10);
-  rect(width / 2.5, height / 4 + height / 2, width - 2 * width / 2.5, width / 20);
-  rect(width / 2 - width / 20 - width / 40, height / 4 - width / 20, width / 20, width / 20);
+  background ('pink');
+  ellipse(xPos, 50, 50, 50);
+
+  xPos = xPos + xVelocity;
+
+  if (xPos > windowWidth){
+    xVelocity = -5;
+  }
+  if (xPos < 0) {
+    xVelocity = 5;
+  }
+ 
 }
